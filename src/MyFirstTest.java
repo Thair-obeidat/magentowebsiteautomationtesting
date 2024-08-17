@@ -96,8 +96,7 @@ public class MyFirstTest {
 
 		AllItem.get(randomItem).click();
 
-		WebElement theContainerOfSizes = driver
-				.findElement(By.cssSelector("div[class='swatch-attribute size'] div[role='listbox']"));
+		WebElement theContainerOfSizes = driver.findElement(By.cssSelector("div[class='swatch-attribute size'] div[role='listbox']"));
 		List<WebElement> sizeOfItems = theContainerOfSizes.findElements(By.tagName("div"));
 
 		int numberOfSizes = sizeOfItems.size();
@@ -105,8 +104,7 @@ public class MyFirstTest {
 
 		sizeOfItems.get(randomsizes).click();
 
-		WebElement colorOfItems = driver
-				.findElement(By.cssSelector("div[class='swatch-attribute color'] div[role='listbox']"));
+		WebElement colorOfItems = driver.findElement(By.cssSelector("div[class='swatch-attribute color'] div[role='listbox']"));
 		List<WebElement> colors = colorOfItems.findElements(By.tagName("div"));
 
 		int numberofcolors = colors.size();
@@ -163,8 +161,8 @@ public class MyFirstTest {
 		WebElement submitReviewButton = driver.findElement(By.cssSelector(".action.submit.primary"));
 		submitReviewButton.click();
 		
-		String actualTextforreview = driver.findElement(By.cssSelector("message-success.success.message")).getText();
-		String expectedTextforreview = "You submitted your review for moderation";
+		String actualTextforreview = driver.findElement(By.cssSelector(".message-success.success.message")).getText();
+		String expectedTextforreview = "You submitted your review for moderation.";
 		
 		Assert.assertEquals(actualTextforreview,expectedTextforreview);
 	}
